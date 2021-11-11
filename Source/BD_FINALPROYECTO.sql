@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `bd_projectfinal` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `bd_projectfinal`;
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bd_projectfinal
@@ -116,7 +118,7 @@ CREATE TABLE `contrato` (
   CONSTRAINT `id_referencia_comercio` FOREIGN KEY (`referencia_comercio`) REFERENCES `referencia_comercial` (`identificacion`),
   CONSTRAINT `id_referencia_personal_1` FOREIGN KEY (`referencia_personal_1`) REFERENCES `persona` (`numero_identificacion`),
   CONSTRAINT `id_referencia_personal_2` FOREIGN KEY (`referencia_personal_2`) REFERENCES `persona` (`numero_identificacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +127,7 @@ CREATE TABLE `contrato` (
 
 LOCK TABLES `contrato` WRITE;
 /*!40000 ALTER TABLE `contrato` DISABLE KEYS */;
-INSERT INTO `contrato` VALUES (4,1001,'A1-001-005-102',NULL,NULL,3244,1,123454321,234565432,345678765,12345),(5,1003,'M08-025-001-012',NULL,2243,NULL,3,234543211,234565432,345678765,215454),(6,1002,'C12-015-010-015',1242,NULL,NULL,2,234264234,234565432,345678765,54312);
+INSERT INTO `contrato` VALUES (4,1001,'A1-001-005-102',NULL,NULL,3244,1,123454321,234565432,345678765,12345),(5,1003,'M08-025-001-012',NULL,2243,NULL,3,234543211,234565432,345678765,215454),(6,1002,'C12-015-010-015',1242,NULL,NULL,2,234264234,234565432,345678765,54312),(8,23145,'A3-002-056-103',NULL,NULL,NULL,4,234565432,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `contrato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,7 +334,7 @@ CREATE TABLE `puesto_almacenamiento` (
   KEY `numero_nit` (`bodega_nit`),
   CONSTRAINT `numero_nit` FOREIGN KEY (`bodega_nit`) REFERENCES `bodega` (`nit`),
   CONSTRAINT `puesto_recursivo` FOREIGN KEY (`contiene`) REFERENCES `puesto_almacenamiento` (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,7 +343,7 @@ CREATE TABLE `puesto_almacenamiento` (
 
 LOCK TABLES `puesto_almacenamiento` WRITE;
 /*!40000 ALTER TABLE `puesto_almacenamiento` DISABLE KEYS */;
-INSERT INTO `puesto_almacenamiento` VALUES (1,'CUADRANTE 1','A1-001-005-102',NULL,'000010010-Y','A'),(2,'CUADRANTE 2','C12-015-010-015',NULL,'000010010-Y','C'),(3,'CUADRANTE 3','M08-025-001-012',NULL,'000010010-Y','M');
+INSERT INTO `puesto_almacenamiento` VALUES (1,'CUADRANTE 1','A1-001-005-102',NULL,'000010010-Y','A'),(2,'CUADRANTE 2','C12-015-010-015',NULL,'000010010-Y','C'),(3,'CUADRANTE 3','M08-025-001-012',NULL,'000010010-Y','M'),(4,'CUADRANTE 3','M08-025-001-012',NULL,'000010010-Y','C');
 /*!40000 ALTER TABLE `puesto_almacenamiento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -392,15 +394,15 @@ CREATE TABLE `registro` (
   `local_ingreso` varchar(15) NOT NULL,
   `tipo_usuario` varchar(10) NOT NULL,
   `retiro_mercancia` varchar(1) DEFAULT NULL,
-  `tiempo_entrada` date NOT NULL,
-  `tiempo_salida` date DEFAULT NULL,
+  `tiempo_entrada` varchar(30) NOT NULL,
+  `tiempo_salida` varchar(30) DEFAULT NULL,
   `codigo_producto` int(11) DEFAULT NULL,
   PRIMARY KEY (`numero_registro`),
   KEY `ced_cond` (`cedula_conductor`),
   KEY `placa_veh` (`placa_vehiculo`),
   CONSTRAINT `ced_cond` FOREIGN KEY (`cedula_conductor`) REFERENCES `persona` (`numero_identificacion`),
   CONSTRAINT `placa_veh` FOREIGN KEY (`placa_vehiculo`) REFERENCES `vehiculo` (`placa`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -438,7 +440,7 @@ CREATE TABLE `temporal` (
 
 LOCK TABLES `temporal` WRITE;
 /*!40000 ALTER TABLE `temporal` DISABLE KEYS */;
-INSERT INTO `temporal` VALUES (3244,'2021-10-20','2022-01-20','M',23572,'A1-001-005-102 ');
+INSERT INTO `temporal` VALUES (1234,'2021-11-20','2022-01-12','M',23145,'A3-002-056-103'),(3244,'2021-10-20','2022-01-20','M',23572,'A1-001-005-102 ');
 /*!40000 ALTER TABLE `temporal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -487,4 +489,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-10 11:57:56
+-- Dump completed on 2021-11-10 22:57:30
