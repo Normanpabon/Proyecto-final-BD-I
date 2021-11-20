@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Santi/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/entidades/Consultas.java</file>
-            <file>file:/C:/Users/Santi/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/Clase_Gui.java</file>
-            <file>file:/C:/Users/Santi/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/entidades/Registro.java</file>
+            <file>file:/E:/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/entidades/Contrato.java</file>
+            <file>file:/E:/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/entidades/Persona.java</file>
+            <file>file:/E:/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/entidades/PuestoAlmacenamiento.java</file>
+            <file>file:/E:/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/entidades/Vehiculo.java</file>
+            <file>file:/E:/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/Clase_Gui.java</file>
+            <file>file:/E:/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/entidades/Consultas.java</file>
+            <file>file:/E:/Documents/GitHub/Proyecto-final-BD-I/Source/proyectobd1/src/conexionBD.java</file>
         </group>
     </open-files>
 </project-private>
